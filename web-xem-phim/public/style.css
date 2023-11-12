@@ -17,6 +17,7 @@ body {
 }
 
 .header .logo {
+
   display: flex;
   align-items: center;
   color: #fff;
@@ -95,3 +96,15 @@ button {
   width: 50%; /* Thêm dòng này để làm cho button chiếm 50% chiều rộng của form */
   margin: auto; /* Thêm dòng này để căn giữa button theo chiều ngang */
 }
+.moviee {
+  width: 800px;
+  height: 780px;
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 8px;}
+  .movieee {
+    width: 1300px;
+    height: 900px;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;}

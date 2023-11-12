@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Xem Phim</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="C:\nnkb\web-xem-phim\img\logo.png" alt="Logo">
+            <h1>PHIM VUI</h1>
+        </div>
+        <nav class="menu">
+            <ul>
+                <li><a href="C:\nnkb\web-xem-phim\public\index.html">Trang Chủ</a></li>
+                <li><a href="C:\nnkb\web-xem-phim\public\phimmoi.html">Phim Mới</a></li>
+                <li><a href="C:\nnkb\web-xem-phim\public\theloai.html">Thể Loại</a></li>
+                <li><a href="C:\nnkb\web-xem-phim\public\dangnhap.html">đăng nhập</a></li>
+                <li><a href="C:\nnkb\web-xem-phim\public\dangky.html">đăng ký</a></li>
+                <!-- Thêm các mục menu khác tùy theo yêu cầu -->
+            </ul>
+        </nav>
+    </header>
+    <main class="main-content">
+        <article class="moviee">
+            <h2>Quản lý phim</h2>
+
+            <!-- Form thêm phim -->
+            <form id="addForm">
+                <label for="movieTitle">Tên phim:</label>
+                <input type="text" id="movieTitle" required>
+                <label for="movieDescription">Mô tả phim:</label>
+                <textarea id="movieDescription" required></textarea>
+                <label for="movieVideo">Link video phim:</label>
+                <input type="url" id="movieVideo" required>
+                <label for="movieImage">Link ảnh bìa:</label>
+                <input type="url" id="movieImage" required>
+                <button type="button" onclick="addMovie()">Thêm phim</button>
+            </form>
+        
+            <!-- Danh sách phim -->
+            <h3>Danh sách phim</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tên phim</th>
+                        <th>Mô tả phim</th>
+                        <th>Video phim</th>
+                        <th>Ảnh bìa</th>
+                        <th>Hành động</th>
+                    </tr>
+                </thead>
+                <tbody id="movieList">
+                    <!-- Danh sách phim sẽ được hiển thị ở đây -->
+                </tbody>
+            </table>
+        
+            <script>
+                // Dữ liệu giả định (có thể thay thế bằng dữ liệu từ backend)
+                var movies = [
+                    {
+                        title: "The Shawshank Redemption",
+                        description: "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
+                        video: "https://www.youtube.com/watch?v=6hB3S9bIaco",
+                        image: "https://example.com/shawshank.jpg"
+                    },
+                    {
+                        title: "The Godfather",
+                        description: "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.",
+                        video: "https://www.youtube.com/watch?v=sY1S34973zA",
+                        image: "https://example.com/godfather.jpg"
+                    }
+                ];
+        
+                // Hiển thị danh sách phim ban đầu
+                displayMovies();
+        
+                // Hàm thêm phim
+                function addMovie() {
+                    var title = document.getElementById("movieTitle").value;
+                    var description = document.getElementById("movieDescription").value;
+                    var video = document.getElementById("movieVideo").value;
+                    var image = document.getElementById("movieImage").value;
+        
+                    // Thêm phim vào danh sách
+                    movies.push({ title: title, description: description, video: video, image: image });
+        
+                    // Hiển thị lại danh sách phim
+                    displayMovies();
+        
+                    // Reset form
+                    document.getElementById("addForm").reset();
+                }
+        
+                // Hàm hiển thị danh sách phim
+                function displayMovies() {
+                    var movieList = document.getElementById("movieList");
+                    movieList.innerHTML = "";
+        
+                    movies.forEach(function(movie) {
+                        var row = movieList.insertRow();
+                        var cell1 = row.insertCell(0);
+                        var cell2 = row.insertCell(1);
+                        var cell3 = row.insertCell(2);
+                        var cell4 = row.insertCell(3);
+                        var cell5 = row.insertCell(4);
+        
+                        cell1.innerHTML = movie.title;
+                        cell2.innerHTML = movie.description;
+                        cell3.innerHTML = '<a href="' + movie.video + '" target="_blank">Xem video</a>';
+                        cell4.innerHTML = '<img src="' + movie.image + '" alt="' + movie.title + '" style="width:100px;height:150px;">';
+                        cell5.innerHTML = '<button onclick="editMovie(\'' + movie.title + '\')">Sửa</button> ' +
+                                          '<button onclick="deleteMovie(\'' + movie.title + '\')">Xóa</button>';
+                    });
+                }
+        
+                // Hàm sửa phim
+                function editMovie(title) {
+                    // Đưa dữ liệu phim vào form sửa
+                    var movie = movies.find(function(m) {
+                        return m.title === title;
+                    });
+        
+                    document.getElementById("movieTitle").value = movie.title;
+                    document.getElementById("movieDescription").value = movie.description;
+                    document.getElementById("movieVideo").value = movie.video;
+                    document.getElementById("movieImage").value = movie.image;
+        
+                    // Xóa phim khỏi danh sách
+                    deleteMovie(title);
+                }
+        
+                // Hàm xóa phim
+                function deleteMovie(title) {
+                    // Lọc ra phim cần xóa
+                    movies = movies.filter(function(movie) {
+                        return movie.title !== title;
+                    });
+        
+                    // Hiển thị lại danh sách phim
+                    displayMovies();
+                }
+            </script>
+        
+</article>
+</main>
+<footer class="footer">
+    <p>&copy; 2023 Web Xem Phim. All rights reserved. Liên hệ: webxemphim@example.com</p>
+</footer>
+</body>
+</html>

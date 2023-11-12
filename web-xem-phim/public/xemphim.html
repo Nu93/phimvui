@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Xem Phim</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="C:\nnkb\web-xem-phim\img\logo.png" alt="Logo">
+            <h1>PHIM VUI</h1>
+        </div>
+        <nav class="menu">
+            <ul>
+                <li><a href="C:\nnkb\web-xem-phim\public\index.html">Trang Chủ</a></li>
+                <li><a href="C:\nnkb\web-xem-phim\public\phimmoi.html">Phim Mới</a></li>
+                <li><a href="C:\nnkb\web-xem-phim\public\theloai.html">Thể Loại</a></li>
+                <li><a href="C:\nnkb\web-xem-phim\public\dangnhap.html">đăng nhập</a></li>
+                <li><a href="C:\nnkb\web-xem-phim\public\dangky.html">đăng ký</a></li>
+                <!-- Thêm các mục menu khác tùy theo yêu cầu -->
+            </ul>
+        </nav>
+    </header>
+    <main class="main-content">
+        <article class="movieee">
+            <iframe width="1200" height="860" src="https://www.youtube.com/watch?v=ZkIe8xlfolU"></iframe>
+        
+            <script>
+                var videoPlayer = document.getElementById("videoPlayer");
+        
+                // Xử lý sự kiện khi nhấp vào nút mở rộng toàn màn hình
+                videoPlayer.addEventListener("click", function() {
+                    if (videoPlayer.requestFullscreen) {
+                        videoPlayer.requestFullscreen();
+                    } else if (videoPlayer.mozRequestFullScreen) {
+                        videoPlayer.mozRequestFullScreen();
+                    } else if (videoPlayer.webkitRequestFullscreen) {
+                        videoPlayer.webkitRequestFullscreen();
+                    } else if (videoPlayer.msRequestFullscreen) {
+                        videoPlayer.msRequestFullscreen();
+                    }
+                });
+        
+                // Xử lý sự kiện khi thoát toàn màn hình
+                document.addEventListener("fullscreenchange", exitFullscreenHandler);
+                document.addEventListener("mozfullscreenchange", exitFullscreenHandler);
+                document.addEventListener("webkitfullscreenchange", exitFullscreenHandler);
+                document.addEventListener("msfullscreenchange", exitFullscreenHandler);
+        
+                function exitFullscreenHandler() {
+                    if (!document.fullscreenElement &&
+                        !document.mozFullScreenElement &&
+                        !document.webkitFullscreenElement &&
+                        !document.msFullscreenElement) {
+                        // Người dùng đã thoát toàn màn hình, có thể thực hiện các xử lý cần thiết
+                        // Ví dụ: Hiển thị lại các điều khiển người chơi video, vv.
+                    }
+                }
+            </script>
+        
+</article>
+</main>
+<footer class="footer">
+    <p>&copy; 2023 Web Xem Phim. All rights reserved. Liên hệ: webxemphim@example.com</p>
+</footer>
+</body>
+</html>
