@@ -1,0 +1,97 @@
+/* style.css */
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: gray; /* Đổi màu nền sang gray */
+
+}
+
+.header {
+  background-color: rgb(57, 57, 57);
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header .logo {
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
+
+.header img {
+  width: 50px; /* Điều chỉnh kích thước logo theo nhu cầu */
+  margin-right: 10px;
+}
+
+.menu ul {
+  list-style: none;
+  display: flex;
+}
+
+.menu li {
+  margin-right: 20px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.main-content {
+  background-color: gray; 
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.movie-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.movie {
+  width: 300px;
+  margin: 15px;
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+}
+.footer {
+  background-color: rgb(72, 69, 69);
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+.movie img {
+  width: 300px;
+  height: 420px;
+  object-fit: cover; /* Đảm bảo ảnh không bị bóp méo */
+  border-radius: 8px; /* Bo tròn mép của hình ảnh */
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+}
+button {
+  background-color: #3498db;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 50%; /* Thêm dòng này để làm cho button chiếm 50% chiều rộng của form */
+  margin: auto; /* Thêm dòng này để căn giữa button theo chiều ngang */
+}
