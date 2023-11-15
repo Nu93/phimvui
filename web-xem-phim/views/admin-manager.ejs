@@ -1,0 +1,97 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>User Account</title>
+        <style>
+            body {
+                font-family: 'Arial', sans-serif;
+                background-color: #f4f4f4;
+                margin: 0;
+                padding: 0;
+            }
+
+            nav {
+                background-color: #333;
+                color: white;
+            }
+
+            nav ul {
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
+                display: flex;
+            }
+
+            nav li {
+                padding: 15px;
+            }
+
+            nav a {
+                color: white;
+                text-decoration: none;
+            }
+
+            h1 {
+                color: #333;
+            }
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 20px;
+            }
+
+            th, td {
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+            }
+
+            th {
+                background-color: #4CAF50;
+                color: white;
+            }
+
+            tbody tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
+        </style>
+    </head>
+    <body>
+        <nav>
+            <ul>
+              <li><a href="/users">User</a></li>
+              <li><a href="/admins">Admin</a></li>
+              <li><a href="/films">Film</a></li>
+            </ul>
+        </nav>
+        <h1>Admin Account</h1>
+
+        <table>
+            <thead>
+              <tr>
+                <th>Username</th>
+                <th>Password</th>
+                <th>Email</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+                <% admins.forEach(admin => { %>
+                <tr>
+                  <td><%= admin.name %></td>
+                  <td><%= admin.pass %></td>
+                  <td><%= admin.email %></td>
+                  <td class="action-icons">
+                    <a href="/edit/<%= admin._id %>">Edit</a>
+                    <a href="/delete/<%= admin._id %>">Delete</a>
+                  </td>
+                </tr>
+              <% }); %>
+            </tbody>
+          </table>
+  
+    </body>
+
+</html>

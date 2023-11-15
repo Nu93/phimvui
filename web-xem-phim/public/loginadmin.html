@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Xem Phim</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="../img/logo.png" alt="Logo">
+            <h1>PHIM VUI</h1>
+        </div>
+    </header>
+    <main class="main-content">
+        <article class="movie">
+            <form action="/loginadmin" method="post">
+                <h2>Đăng Nhập Admin</h2>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <br>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <br>
+                <!--<a type="submit" href="/users">Login</a>-->
+                <a type="submit" href="/users">
+                    <button type="button" >Login</button>
+                </a>
+
+            </form>
+            <a href="/adminregis">Register</a>
+        </article>
+    </main>
+    <footer class="footer">
+        <p>&copy; 2023 Web Xem Phim. All rights reserved. Liên hệ: webxemphim@example.com</p>
+    </footer>
+  </body>
+  </html>

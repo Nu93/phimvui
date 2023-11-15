@@ -1,0 +1,26 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sửa Thông Tin Film</title>
+</head>
+<body>
+  <h1>Sửa Thông Tin Film</h1>
+
+  <form action="/update-film/<%= film._id %>" method="POST">
+    <label for="Title">Tên Bộ Phim:</label>
+    <input type="text" id="movieTitle" name="movieTitle" value="<%= film.movieTitle %>" required>
+
+    <label for="Description">Mô Tả:</label>
+    <input type="text" id="movieDescription" name="movieDescription" value="<%= film.movieDescription %>" required>
+
+    <label for="linkfilm">Link:</label>
+    <input type="text" id="linkfilm" name="linkfilm" value="<%= film.linkfilm %>" required>
+
+    <label for="thumbnail">Thumbnail:</label>
+    <input type="text" id="thumbnail" name="thumbnail" value="<%= film.thumbnail %>" required>
+
+    <button type="submit">Cập Nhật</button>
+  </form>
+</body>
+</html>

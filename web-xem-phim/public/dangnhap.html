@@ -9,23 +9,23 @@
 <body>
     <header class="header">
         <div class="logo">
-            <img src="C:\nnkb\web-xem-phim\img\logo.png" alt="Logo">
+            <img src="../img/logo.png" alt="Logo">
             <h1>PHIM VUI</h1>
         </div>
         <nav class="menu">
             <ul>
-                <li><a href="C:\nnkb\web-xem-phim\public\index.html">Trang Chủ</a></li>
-                <li><a href="C:\nnkb\web-xem-phim\public\phimmoi.html">Phim Mới</a></li>
-                <li><a href="C:\nnkb\web-xem-phim\public\theloai.html">Thể Loại</a></li>
-                <li><a href="C:\nnkb\web-xem-phim\public\dangnhap.html">đăng nhập</a></li>
-                <li><a href="C:\nnkb\web-xem-phim\public\dangky.html">đăng ký</a></li>
+                <li><a href="/">Trang Chủ</a></li>
+                <li><a href="/newfilm">Phim Mới</a></li>
+                <li><a href="/theloai">Thể Loại</a></li>
+                <li><a href="/login">đăng nhập</a></li>
+                <li><a href="/registration">đăng ký</a></li>
                 <!-- Thêm các mục menu khác tùy theo yêu cầu -->
             </ul>
         </nav>
     </header>
     <main class="main-content">
         <article class="movie">
-            <form>
+            <form action="/login" method="POST">
                 <h2>Đăng Nhập</h2>
                 <label for="username">Tên người dùng:</label>
                 <input type="text" id="username" name="username" required>
@@ -33,8 +33,8 @@
                 <label for="password">Mật khẩu:</label>
                 <input type="password" id="password" name="password" required>
             
-                <button type="submit">Đăng Nhập</button>
-              </form>
+                <button type="submit"">Đăng Nhập</button>
+            </form>
         </article>
     </main>
     <footer class="footer">

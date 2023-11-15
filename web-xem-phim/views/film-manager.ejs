@@ -1,0 +1,106 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Danh sách Bộ Phim</title>
+        <style>
+            .film-list-container {
+                max-width: 800px; /* Đặt chiều rộng tối đa cho container */
+                margin: 0 auto; /* Canh giữa container */
+                padding: 20px; /* Thêm padding để tạo khoảng cách */
+            }
+
+            .new-button {
+                display: block;
+                margin-bottom: 10px; /* Khoảng cách giữa nút "New" và bảng dữ liệu */
+                background-color: #4CAF50; /* Màu nền */
+                color: white; /* Màu chữ */
+                padding: 10px; /* Kích thước nút */
+                padding-left: 25px;
+                text-decoration: none; /* Bỏ gạch chân cho liên kết */
+                border-radius: 4px; /* Bo góc */
+                margin-left: 90%;
+            }
+            nav {
+                background-color: #333;
+                color: white;
+            }
+
+            nav ul {
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
+                display: flex;
+            }
+
+            nav li {
+                padding: 15px;
+            }
+
+            nav a {
+                color: white;
+                text-decoration: none;
+            }
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 10px; /* Khoảng cách giữa nút "New" và bảng dữ liệu */
+            }
+
+            table, th, td {
+                border: 1px solid #ddd;
+            }
+
+            th, td {
+                padding: 10px;
+                text-align: left;
+            }
+
+            th {
+                background-color: #4CAF50;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <nav>
+            <ul>
+              <li><a href="/users">User</a></li>
+              <li><a href="/admins">Admin</a></li>
+              <li><a href="/films">Film</a></li>
+            </ul>
+        </nav>
+        <div class="film-list-container">
+            <h1>Danh sách Bộ Phim</h1>
+            <a class="new-button" href="/new-film">New</a>
+            <table>
+                <thead>
+                <tr>
+                    <th>Tên Bộ Phim</th>
+                    <th>Mô Tả</th>
+                    <th>Linkfilm</th>
+                    <th>Thumnail</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                <% films.forEach(film => { %>
+                    <tr>
+                    <td><%= film.movieTitle %></td>
+                    <td><%= film.movieDescription %></td>
+                    <td><%= film.linkfilm %></td>
+                    <td><%= film.thumbnail %></td>
+                    <td>
+                        <!-- Thêm liên kết để sửa thông tin film -->
+                        <a href="/edit-film/<%= film._id %>">Sửa</a>        
+                        <!-- Thêm liên kết để xóa film -->
+                        <a href="/delete-film/<%= film._id %>">Xóa</a>
+                    </td>
+                    </tr>
+                <% }); %>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>

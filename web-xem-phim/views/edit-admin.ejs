@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chỉnh sửa Admin</title>
+  </head>
+  <body>
+    <h1>Chỉnh sửa Admin</h1>
+
+    <form action="/update/<%= admin._id %>" method="POST">
+      <!-- Thêm các trường chỉnh sửa thông tin admin -->
+      <label for="username">Username:</label>
+      <input type="text" id="name" name="name" value="<%= admin.name %>">
+
+      <label for="password">Password:</label>
+      <input type="password" id="pass" name="pass" value="<%= admin.pass %>">
+
+      <label for="email">Password:</label>
+      <input type="email" id="email" name="email" value="<%= admin.email %>">
+
+      <button type="submit">Lưu thay đổi</button>
+    </form>
+  </body>
+</html>

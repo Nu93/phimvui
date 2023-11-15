@@ -99,12 +99,158 @@ button {
 .moviee {
   width: 800px;
   height: 780px;
-  background-color: #fff;
+  background-color: #241d1d;
   padding: 15px;
   border-radius: 8px;}
   .movieee {
     width: 1300px;
     height: 900px;
-    background-color: #fff;
+    background-color: #d3c9c9;
     padding: 15px;
     border-radius: 8px;}
+
+ /*css file quản lý*/
+ /* public/styles.css */
+body2 {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar2 {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: -250px;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 20px;
+}
+
+.menu-btn2 {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  border: none;
+  color: white;
+  padding: 15px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.menu2 {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu2 button {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  margin: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.submenu2 {
+  display: none;
+}
+
+.submenu2 button {
+  background-color: #555;
+}
+
+.content2 {
+  margin-left: 250px;
+  padding: 20px;
+}
+
+table-2 {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th-2, td-2 {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th-2 {
+  background-color: #333;
+  color: white;
+}
+
+#newBtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  }
+
+  h1 {
+  text-align: center;
+  }
+
+  .film-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  }
+
+  .film-card {
+  margin-left: 10px;
+  margin-top: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .film-thumbnail {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  cursor: pointer; /* Chỉnh sửa: Thêm điểm cho con trỏ khi di chuyển qua ảnh */
+  }
+
+  .film-info {
+  padding: 10px;
+  }
+
+  /* Chỉnh sửa: Ẩn liên kết */
+  .film-link {
+  display: none;
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Màu nền với độ trong suốt */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: black; /* Đổi màu chữ thành màu đen */
+    padding: 20px;
+    box-sizing: border-box; /* Đảm bảo padding không tăng kích thước tổng của phần tử */
+    margin-top: 85%; /* Cách mép trên 300px */
+    opacity: 0; /* Mặc định ẩn */
+    transition: opacity 0.3s ease, margin-top 0.3s ease; /* Hiệu ứng chuyển động opacity và margin-top */
+}
+
